@@ -366,3 +366,22 @@ section .sobre-mimi::marker{
 section .sobre-mim ul{
     color: red;
 }
+
+
+.bullet-container{
+    display: flex;
+    margin-top: 25px;
+    color:wheat;
+    margin-left: 37%;
+}
+
+.bullet img{
+    width: 20px;
+    filter: grayscale(1);
+}
+
+.bullet{
+    display: flex;
+    gap: 15px
+}
+
