@@ -1,69 +1,134 @@
-/*Estilo Geral*/
-
-*{
+/* Estilo Geral */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    .poppins-thin {
-        font-family: "Poppins", sans-serif;
-        font-weight: 100;
-        font-style: normal;
-      }
+    font-family: "Poppins", sans-serif;
 }
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
-body{
-    background-color: #000000 ;
-    height: 230vh;
+@keyframes changeBackground {
+    0% {
+        background-color: #868686;
+    }
+    50% {
+        background-color: #fddbc7;
+    }
+    100% {
+        background-color: #868686;
+    }
 }
 
-.interface{
+body {
+    animation: changeBackground 5s infinite;
+    height: 100vh;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+/* Animação para os elementos flutuantes */
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translateY(-20px) rotate(180deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0) rotate(360deg);
+        opacity: 0.5;
+    }
+}
+
+.floating-element {
+    position: absolute;
+    font-size: 24px;
+    color: rgba(0, 0, 0, 0.7);
+    animation: float 5s infinite ease-in-out;
+}
+
+.floating-element:nth-child(1) {
+    top: 10%;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.floating-element:nth-child(2) {
+    top: 30%;
+    left: 70%;
+    animation-delay: 1s;
+}
+
+.floating-element:nth-child(3) {
+    top: 50%;
+    left: 40%;
+    animation-delay: 2s;
+}
+
+.floating-element:nth-child(4) {
+    top: 70%;
+    left: 10%;
+    animation-delay: 3s;
+}
+
+.floating-element:nth-child(5) {
+    top: 90%;
+    left: 60%;
+    animation-delay: 4s;
+}
+
+.interface {
     max-width: 1280px;
     margin: 0 auto;
 }
 
-.flex{
+.flex {
     display: flex;
 }
 
 /* Estilo do cabeçalho */
-header{
-    padding: 40px 4%;
+header {
+    padding: 20px 4%;
 }
 
-header > .interface{
+header > .interface {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-header a{
-    color: #5c5c5c;
+header a {
+    color: #000000;
     text-decoration: none;
     display: inline-block;
 }
 
-header a:hover{
-    color: #fff;
+header a:hover {
+    color: #000000;
     transform: scale(1.08);
     transition: .2s;
 }
 
-header nav ul{
+header nav ul {
     list-style-type: none;
 }
 
-header nav ul li{
+header nav ul li {
     display: inline;
-    padding: 0 40px;
+    padding: 0 20px;
 }
 
-header .btn-contato button{
-    padding: 10px 40px;
-    font-size: 18px;
+header .btn-contato button {
+    padding: 10px 20px;
+    font-size: 16px;
     font-weight: 600;
     background-color: red;
     border: 0;
@@ -71,317 +136,380 @@ header .btn-contato button{
     cursor: pointer;
 }
 
-h2.titulo{
-    color: #ffff;
+h2.titulo {
+    color: #ff0000;
     font-size: 38px;
     text-align: center;
 }
 
-h2.titulo span{
-    color: red;
+h2.titulo span {
+    color: rgb(0, 0, 0);
 }
 
-header .btn-contato button:hover{
-    box-shadow: 0px 0px 8px #ff0000;
+header .btn-contato button:hover {
+    box-shadow: 0px 0px 8px #000000;
 }
 
 /* Estilo topo do site */
-section.topo-do-site{
-    padding: 40px 4%;;
+section.topo-do-site {
+    padding: 20px 4%;
 }
 
-section.topo-do-site .flex{
+section.topo-do-site .flex {
     align-items: center;
     justify-content: center;
-    gap: 90px;
+    gap: 40px;
 }
 
-.topo-do-site h1{
-    color: #fff;
-    font-size: 50px;
+.topo-do-site h1 {
+    color: #000000;
+    font-size: 36px;
     line-height: 40px;
 }
 
-.topo-do-site h1 span{
-    color: #FF0000;
+.topo-do-site h1 span {
+    color: #000000;
 }
 
-.topo-do-site .txt-topo-site p{
-    color: #fff;
-    margin: 40px 0;
-    font-size: 22px;
+.topo-do-site .txt-topo-site p {
+    color: #000000;
+    margin: 20px 0;
+    font-size: 18px;
 }
 
-.topo-do-site .img-topo-site img{
+.topo-do-site .img-topo-site img {
     position: relative;
     animation: flutuar 2s ease-in-out infinite alternate;
-    width: 500px;
-}
-
-.logo img{
     width: 300px;
-    filter: brightness(1);
+    filter: invert(1);
 }
 
-@keyframes flutuar{
-    0%{
+.logo img {
+    width: 200px;
+    filter: brightness(1);
+    filter: invert(1);
+}
+
+@keyframes flutuar {
+    0% {
         top: 0;
     }
-    100%{
-        top: 30px;
+    100% {
+        top: 20px;
     }
 }
 
-main{
+main {
     padding: 1%;
 }
 
-main .btn-contato button{
-    padding: 10px 40px;
-    font-size: 18px;
+main .btn-contato button {
+    padding: 10px 20px;
+    font-size: 16px;
     font-weight: 600;
-    background-color: rgb(138, 138, 138);
+    background-color: rgb(255, 0, 0);
     border: 0;
     border-radius: 30px;
     cursor: pointer;
     color: #000000;
 }
 
-
-main .btn-contato button:hover{
-    box-shadow: 0px 0px 10px #ff0202;
-    background-color: #ff0000;
-    color: rgb(12, 12, 12);
+main .btn-contato button:hover {
+    box-shadow: 0px 0px 10px #ff484891;
+    background-color: #fc4a4a;
+    color: rgb(255, 0, 0);
     transition: .2s;
     transform: scale(1.05);
 }
 
-/*Especialidades*/
-
-section.especialidades{
-    padding: 40px 4%;
+/* Especialidades */
+section.especialidades {
+    padding: 20px 4%;
 }
 
-section.especialidades .flex{
-    gap: 60px;
+section.especialidades .flex {
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
-.especialidades .especialidades-box{
-    color: white;
-    padding: 40px;
+.especialidades .especialidades-box {
+    color: rgb(0, 0, 0);
+    padding: 20px;
     border-radius: 20px;
-    margin-top: 45px;
+    margin-top: 20px;
     transition: .2s;
+    flex: 1 1 300px;
 }
 
-
-.especialidades .especialidades-box:hover{
-    transform: scale(1.08);
-    box-shadow: 0 0 20px rgba(255, 3, 3, 0.89);
+.especialidades .especialidades-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(252, 48, 48, 0.89);
 }
 
-.especialidades .especialidades-box i{
-    font-size: 68px;
-    color: red;
+.especialidades .especialidades-box i {
+    font-size: 48px;
+    color: rgb(255, 52, 52);
 }
 
-.especialidades .especialidades-box h3{
-    font-size: 28px;
-    margin: 15px 0;
+.especialidades .especialidades-box h3 {
+    font-size: 24px;
+    margin: 10px 0;
 }
 
-/*Portfolio*/
-section.portfolio{
-    padding: 80px 4%;
+/* Portfolio */
+section.portfolio {
+    padding: 40px 4%;
     border-radius: 40px;
-    box-shadow: 0 0 20px 10px #ff00005e
+    box-shadow: 0 0 20px 10px #ff00005e;
 }
 
-section.portfolio .flex{
+section.portfolio .flex {
     justify-content: space-around;
-    margin-top: 60px;
+    margin-top: 40px;
+    flex-wrap: wrap;
 }
 
-.img-port{
-    width: 360px;
-    height: 460px;
+.img-port {
+    width: 100%;
+    max-width: 360px;
+    height: 300px;
     background-size: cover;
-    background-position: 100% 0%; 
+    background-position: 100% 0%;
     transition: 8s;
     cursor: pointer;
-    border-radius: 40px;
+    border-radius: 20px;
     position: relative;
+    margin-bottom: 20px;
 }
 
-.img-port:hover{
+.img-port:hover {
     background-position: 100% 100%;
 }
 
-.overlay{
+.overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-color: #0a0a0a7a;
-    border-radius: 40px;
+    border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 600;
     color: white;
     opacity: 0;
     transition: .5s;
 }
 
-.overlay:hover{
+.overlay:hover {
     opacity: 1;
 }
 
-/* ESTILO DE FORMULÁRIO DE CONTATO*/
-
-section.formulario{
-    padding: 80px 4%;
+/* Estilo de formulário de contato */
+section.formulario {
+    padding: 40px 4%;
 }
 
-form{
+form {
     max-width: 500px;
     margin: 0 auto;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    gap: 15px;
-    margin-top: 50px;
+    gap: 10px;
+    margin-top: 30px;
 }
 
-form input, form textarea{
+form input, form textarea {
     width: 100%;
     background-color: #2c2c2cd2;
     border: 0;
     outline: 0;
-    padding: 20px 15px;
+    padding: 15px;
     border-radius: 15px;
-    color: white;
-    font-size: 18px;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
 }
 
-form input::placeholder{
+form input::placeholder {
     color: red;
 }
 
-form textarea{
+form textarea {
     resize: none;
-    max-height: 200px;
+    max-height: 150px;
 }
 
-form textarea::placeholder{
+form textarea::placeholder {
     color: red;
 }
 
-form .btn-enviar{
-    margin-top: 20px;
+form .btn-enviar {
+    margin-top: 15px;
     text-align: center;
 }
 
-form .btn-enviar input{
+form .btn-enviar input {
     width: 120px;
     background-color: #FF0000;
-    color: #fff;
+    color: #000000;
     font-weight: 700;
     cursor: pointer;
 }
 
-form .btn-enviar:hover{
+form .btn-enviar:hover {
     box-shadow: red;
     transition: .2s;
     transform: scale(1.05);
 }
 
-footer{
-    color: rgb(255, 255, 255);
+footer {
+    color: rgb(0, 0, 0);
     text-align: center;
-    padding-bottom: 25px;
+    padding-bottom: 15px;
     font-weight: 600;
 }
 
-
-.img-sobre img{
-    width: 350px;
+/* Sobre mim */
+.img-sobre img {
+    width: 100%;
+    max-width: 350px;
     border: 0;
-    border-radius: 30px;
-    margin-left: 40px;
+    border-radius: 20px;
+    margin-left: 0;
     cursor: pointer;
     filter: grayscale(1);
     transition: .6s;
-    margin-top: 150px;
-
+    margin-top: 20px;
 }
 
-.img-sobre img:hover{
-    width: 350px;
-    border: 0;
-    border-radius: 30px;
-    margin-left: 40px;
-    cursor: pointer;
+.img-sobre img:hover {
     filter: grayscale(0);
-    transition: .6s;
-    transform: scale(1.08);
+    transform: scale(1.05);
     box-shadow: 0px 0px 15px red;
-    
 }
 
-.sobre-container{
+.sobre-container {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-bottom: 30px;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
-.sobre{
+.sobre {
     text-align: center;
-    color: white;
-    font-size: 25px;
-    width: 37%;
-    margin-top: 150px;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
 }
 
-.sobre p{
-    margin-top: 25px;
-    margin-left: 20px;
+.sobre p {
+    margin-top: 15px;
 }
 
-.sobre h2{
-    margin-left: 30px;
+.sobre h2 {
+    margin-left: 0;
 }
 
-.sobre ul{
-    list-style-type:  disc;
+.sobre ul {
+    list-style-type: disc;
 }
 
-section .sobre-mimi::marker{
-    color: red;
-}
-
-section .sobre-mim ul{
-    color: red;
-}
-
-
-.bullet-container{
+.bullet-container {
     display: flex;
-    margin-top: 25px;
-    color:wheat;
-    margin-left: 37%;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+    color: rgb(0, 0, 0);
 }
 
-.bullet img{
+.bullet img {
     width: 20px;
-    filter: grayscale(1);
+    filter: grayscale(0);
 }
 
-.bullet{
+.bullet {
     display: flex;
-    gap: 15px
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 10px;
 }
 
+/* Menu responsivo */
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    header nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #333;
+        position: absolute;
+        top: 80px;
+        right: 4%;
+        width: 200px;
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+    header nav ul.active {
+        display: flex;
+    }
+
+    header nav ul li {
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .topo-do-site .flex {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .topo-do-site h1 {
+        font-size: 28px;
+    }
+
+    .topo-do-site .txt-topo-site p {
+        font-size: 16px;
+    }
+
+    .topo-do-site .img-topo-site img {
+        width: 200px;
+    }
+
+    .sobre-container {
+        flex-direction: column;
+    }
+
+    .sobre {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .img-sobre img {
+        margin-left: 0;
+    }
+
+    .especialidades .especialidades-box {
+        flex: 1 1 100%;
+    }
+
+    .img-port {
+        width: 100%;
+        max-width: 100%;
+        height: 200px;
+    }
+}
