@@ -3,12 +3,14 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const nodemailer = require('nodemailer');
+const cors = require('cors'); // Adicionado CORS
 
 const app = express();
 const port = 3000;
 
 // Middleware para parsear o corpo das requisições
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors()); // Usar CORS
 
 // Conectar ao MongoDB
 mongoose.connect('mongodb://localhost:27017/meu-banco-de-dados', {
@@ -46,6 +48,11 @@ app.post('/enviar-formulario', async (req, res) => {
         // Validação básica
         if (!nome || !email || !mensagem) {
             return res.status(400).send('Todos os campos são obrigatórios.');
+        }
+
+        // Validação de email
+        if (!email.includes('@')) {
+            return res.status(400).send('Email inválido.');
         }
 
         // Salvar no banco de dados
