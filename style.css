@@ -12,13 +12,13 @@ html {
 
 @keyframes changeBackground {
     0% {
-        background-color: #868686;
+        background-color: #ffffff;
     }
     50% {
-        background-color: #fddbc7;
+        background-color: #ffffff;
     }
     100% {
-        background-color: #868686;
+        background-color: #ffffff;
     }
 }
 
@@ -130,14 +130,14 @@ header .btn-contato button {
     padding: 10px 20px;
     font-size: 16px;
     font-weight: 600;
-    background-color: red;
+    background-color: rgb(163, 162, 162);
     border: 0;
     border-radius: 30px;
     cursor: pointer;
 }
 
 h2.titulo {
-    color: #ff0000;
+    color: #020202;
     font-size: 38px;
     text-align: center;
 }
@@ -147,7 +147,10 @@ h2.titulo span {
 }
 
 header .btn-contato button:hover {
-    box-shadow: 0px 0px 8px #000000;
+    box-shadow: 0px 0px 8px #fd7979;
+    transform: scale(1.05);
+    background-color: #fd7979;
+    transition: 0.2s;
 }
 
 /* Estilo topo do site */
@@ -207,7 +210,7 @@ main .btn-contato button {
     padding: 10px 20px;
     font-size: 16px;
     font-weight: 600;
-    background-color: rgb(255, 0, 0);
+    background-color: rgb(145, 145, 145);
     border: 0;
     border-radius: 30px;
     cursor: pointer;
@@ -215,9 +218,9 @@ main .btn-contato button {
 }
 
 main .btn-contato button:hover {
-    box-shadow: 0px 0px 10px #ff484891;
-    background-color: #fc4a4a;
-    color: rgb(255, 0, 0);
+    box-shadow: 0px 0px 10px #fd777791;
+    background-color: #fa5d5dc9;
+    color: rgb(0, 0, 0);
     transition: .2s;
     transform: scale(1.05);
 }
@@ -243,7 +246,7 @@ section.especialidades .flex {
 
 .especialidades .especialidades-box:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(252, 48, 48, 0.89);
+    box-shadow: 0 0 20px rgba(133, 133, 133, 0.89);
 }
 
 .especialidades .especialidades-box i {
@@ -260,7 +263,7 @@ section.especialidades .flex {
 section.portfolio {
     padding: 40px 4%;
     border-radius: 40px;
-    box-shadow: 0 0 20px 10px #ff00005e;
+    box-shadow: 0 0 20px 10px #7c7c7c5e;
 }
 
 section.portfolio .flex {
@@ -325,7 +328,7 @@ form {
 
 form input, form textarea {
     width: 100%;
-    background-color: #2c2c2cd2;
+    background-color: #e7e7e7d2;
     border: 0;
     outline: 0;
     padding: 15px;
@@ -335,7 +338,7 @@ form input, form textarea {
 }
 
 form input::placeholder {
-    color: red;
+    color: rgb(5, 5, 5);
 }
 
 form textarea {
@@ -344,7 +347,7 @@ form textarea {
 }
 
 form textarea::placeholder {
-    color: red;
+    color: rgb(0, 0, 0);
 }
 
 form .btn-enviar {
@@ -354,7 +357,7 @@ form .btn-enviar {
 
 form .btn-enviar input {
     width: 120px;
-    background-color: #FF0000;
+    background-color: #808080;
     color: #000000;
     font-weight: 700;
     cursor: pointer;
@@ -389,7 +392,7 @@ footer {
 .img-sobre img:hover {
     filter: grayscale(0);
     transform: scale(1.05);
-    box-shadow: 0px 0px 15px red;
+    box-shadow: 0px 0px 15px rgb(117, 117, 117);
 }
 
 .sobre-container {
